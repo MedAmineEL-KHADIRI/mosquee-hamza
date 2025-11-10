@@ -1,13 +1,13 @@
-
-function toggleMenu(){
+function toggleMenu() {
   document.querySelector('.menu').classList.toggle('show');
 }
 
+// Animation au scroll
 const elements = document.querySelectorAll('.fade-in');
-function animateOnScroll(){
-  elements.forEach(el=>{
+function animateOnScroll() {
+  elements.forEach(el => {
     const rect = el.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 100){
+    if (rect.top < window.innerHeight - 100) {
       el.classList.add('show');
     }
   });

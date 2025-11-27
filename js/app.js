@@ -55,3 +55,15 @@ window.addEventListener('scroll', () => {
     if(link.getAttribute('href') === '#' + current) link.classList.add('active');
   });
 });
+
+// Sélection de la section hero
+const hero = document.querySelector('.hero');
+
+// Vérifie que l'élément existe
+if (hero) {
+  window.addEventListener('scroll', () => {
+    let offset = window.pageYOffset;
+    // Ajuste le facteur pour la vitesse du parallaxe (0.5 = moitié de la vitesse de scroll)
+    hero.style.backgroundPositionY = offset * 0.5 + "px";
+  });
+}

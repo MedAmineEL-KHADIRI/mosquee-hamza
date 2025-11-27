@@ -169,7 +169,7 @@ a {
 .hero {
   height: 100vh;
   background: linear-gradient(rgba(0,0,50,0.4), rgba(0,0,50,0.4)),
-              url('https://picsum.photos/1920/1080?blur=2') center/cover no-repeat;
+              url('../assets/mosque_interior.png') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -244,8 +244,8 @@ a {
 
 /* Parallax */
 .parallax { height: 60vh; background-attachment: fixed; background-size: cover; background-position: center; }
-.parallax1 { background-image: url('https://picsum.photos/1920/1080?random=17'); }
-.parallax2 { background-image: url('https://picsum.photos/1920/1080?random=18'); }
+.parallax1 { background-image: url('../assets/mosque_ground.png'); }
+.parallax2 { background-image: url('../assets/mosque_ground.png'); }
 
 /* Timeline */
 .timeline {
@@ -289,4 +289,41 @@ a {
 @media screen and (max-width: 768px){
   .container { width: 100%; left: 0; padding-left: 30px; padding-right: 30px; }
   .timeline::after { left: 20px; }
+}
+
+.footer {
+  background: #0a2a43;
+  color: #f5e9d3;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-title {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #f5e9d3;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.social-icons .icon svg {
+  width: 32px;
+  height: 32px;
+  fill: #f5e9d3;
+  transition: 0.3s;
+}
+
+.social-icons .icon:hover svg {
+  transform: scale(1.15);
+  fill: #d7c1a1;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  opacity: 0.8;
 }

@@ -56,19 +56,14 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Sélectionne toutes les sections avec la classe 'parallax'
-const parallaxSections = document.querySelectorAll('.parallax .hero');
+// Sélectionne toutes les sections parallaxe
+const parallaxSections = document.querySelectorAll('.parallax');
 
-if (parallaxSections.length > 0) {
-  window.addEventListener('scroll', () => {
-    const scrollY = window.pageYOffset;
+window.addEventListener('scroll', () => {
+  const scrollY = window.pageYOffset;
 
-    parallaxSections.forEach(section => {
-      // Ajuste la vitesse du parallaxe (0.5 = moitié de la vitesse du scroll)
-      const factor = 0.5;
-
-      // Applique l'effet
-      section.style.backgroundPositionY = scrollY * factor + "px";
-    });
+  parallaxSections.forEach(section => {
+    const factor = 0.5; // ajuster la vitesse
+    section.style.backgroundPosition = `center ${-scrollY * factor}px`;
   });
-}
+});

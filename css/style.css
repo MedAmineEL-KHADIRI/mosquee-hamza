@@ -244,7 +244,7 @@ a {
 .fade-in.show { opacity: 1; transform: translateY(0); }
 
 /* Parallax */
-.parallax { height: 60vh; background-attachment: fixed; background-size: cover; background-position: center; }
+.parallax { height: 60vh; background-size: cover; background-position: center; }
 .parallax1 { background-image: url('../assets/mosque_ground.png'); }
 .parallax2 { background-image: url('../assets/mosque_ground.png'); }
 
@@ -552,4 +552,93 @@ a {
 .event-info p {
   color: #333;
   line-height: 1.45;
+}
+
+/* Section dons modernisée */
+#donations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background: #f5f8fa;
+}
+
+.donation-card {
+  max-width: 720px;
+  background: #ffffff;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.donation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+}
+
+.donation-card h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2rem; /* réduit un peu */
+  color: #004b7c;
+  margin-bottom: 25px;
+}
+
+.donation-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.donation-btn {
+  display: inline-block;
+  padding: 18px 44px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #fff;
+  background: linear-gradient(135deg, #28a745, #7cfc00);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.donation-btn:hover {
+  background: linear-gradient(135deg, #218838, #32cd32);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Cards pour iframe */
+.iframe-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.12);
+  margin: 30px 0;
+  border: 1px solid #e6e6e6;
+  width: 100%;           /* prend toute la largeur disponible */
+  max-width: 1400px;     /* limite sur très grand écran */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.iframe-card iframe {
+  display: block;
+  border: none;
+  width: 100%;           /* iframe prend toute la largeur de la card */
+  height: 750px;         /* iframe plus haute pour l’effet immersive */
+  border-radius: 16px;   /* arrondi pour l’iframe */
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .iframe-card iframe {
+    height: 500px;        /* adapte la hauteur sur mobile */
+  }
 }

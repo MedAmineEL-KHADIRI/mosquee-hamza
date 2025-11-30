@@ -34,14 +34,16 @@
   <div class="overlay"></div>
 
   <!-- Hero -->
-  <section id="accueil" class="hero fade-in">
+  <section id="accueil" class="hero fade-in ">
     <h2>Bienvenue à la Mosquée de Vienne</h2>
     <p>
       Bienvenue à la Mosquée Hamza de Vienne, un lieu de paix et de spiritualité.<br>
       Retrouvez ici nos horaires, activités et informations essentielles pour la communauté.<br>
       Que la paix et la bénédiction d’Allah accompagnent votre visite.
     </p>
-    <a href="#about" class="btn">Faites défiler pour Découvrir</a>
+    <a href="#about" class="logo-link">
+        <img src="assets/scroll.png" alt="Faites défiler pour découvrir votre mosquée" class="logo">
+    </a>
   </section>
 
   <!-- <div class="parallax parallax1"></div> -->
@@ -96,7 +98,7 @@
   <!-- Événements -->
   <section id="events" class="section fade-in">
 
-<h2 class="section-title">Activités</h2>
+  <h2 class="section-title">Activités</h2>
 
     <div class="activities-grid">
       <div class="activity-card">
@@ -135,7 +137,7 @@
       <div class="activity-card">
         <div class="activity-image">
           <img src="assets/news.png" alt="Atelier Zakat et Hajj">
-          <span class="activity-date">25 Nov 2025 (entre Duhr et Asr)</span>
+          <span class="activity-date">25 Dec 2025 (entre Maghrib et Icha'a)</span>
         </div>
         <div class="activity-info">
           <h3>Rencontre</h3>
@@ -199,21 +201,30 @@
   <!-- Horaires & localisation -->
   <section id="horaires" class="section fade-in">
     <h2 style="margin-bottom: 20px;">Horaires de prière</h2>
+    <div class="card iframe-card">
       <iframe src="https://mawaqit.net/fr/w/grande-mosquee-de-lyon-lyon-69008-france?showOnly5PrayerTimes=0" width="100%" height="600" style="margin-bottom: 20px;"></iframe>
+    </div> 
 
     <h2 style="margin-bottom: 20px;">Trouver ma mosquée</h2>
-
-    <iframe src="https://www.google.com/maps?q=6+Rue+du+Port+de+l'Ecu+38200+Vienne+France&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    <div class="card iframe-card">
+      <iframe src="https://www.google.com/maps?q=6+Rue+du+Port+de+l'Ecu+38200+Vienne+France&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </div>  
     </iframe>    
   </section>
 
   <div class="parallax parallax2"></div>
 
-  <!-- Dons -->
-  <section id="donations" class="section fade-in">
-    <h2>Faire un don</h2>
-    <a href="https://www.paypal.com/donate?hosted_button_id=TON_ID_PAYPAL" target="_blank" class="btn">Don via PayPal</a>
-  </section>
+<!-- Dons -->
+<section id="donations" class="section fade-in">
+  <div class="donation-card">
+    <h2>Contribuez à notre mosquée</h2>
+    <p class="donation-text">
+      « Ceux qui dépensent [dans le sentier d’Allah] ressemblent à un grain qui produit sept épis, chacun contenant cent grains. Allah multiplie la récompense pour qui Il veut. » (Sourate Al-Baqara, 2:261)<br><br>
+      Votre soutien aide la Mosquée Hamza de Vienne à continuer d’accueillir, d’enseigner et de servir la communauté. Chaque don compte, petit ou grand.
+    </p>
+    <a href="https://www.paypal.com/donate?hosted_button_id=TON_ID_PAYPAL" target="_blank" class="btn donation-btn">Bismi'LAH faire un don بسم الله</a>
+  </div>
+</section>
 
   <footer id="footer" class="footer">
     <div class="footer-content">

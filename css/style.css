@@ -132,7 +132,7 @@ a {
 
 .menu a:hover,
 .menu a.active {
-  color: var(--gold);
+  color: #C3B882;
 }
 
 /* Desktop overrides */
@@ -177,6 +177,7 @@ a {
   color: #fff;
   text-align: center;
   padding: 0 10px;
+
 }
 
 .hero h1 { font-size: 44px; margin-bottom: 20px; }
@@ -254,6 +255,7 @@ a {
   margin: 40px auto;
 }
 
+/* Ligne centrale */
 .timeline::after {
   content: '';
   position: absolute;
@@ -265,16 +267,25 @@ a {
   margin-left: -3px;
 }
 
+/* Bloc de base */
 .container {
   padding: 20px;
   position: relative;
   background-color: inherit;
   width: 50%;
+  box-sizing: border-box;
 }
 
-.container.left { left: 0; }
-.container.right { left: 50%; }
+/* Alternance automatique desktop */
+.timeline .container:nth-child(odd) {
+  left: 0;
+}
 
+.timeline .container:nth-child(even) {
+  left: 50%;
+}
+
+/* Carte */
 .content {
   padding: 20px;
   background-color: #fff;
@@ -283,12 +294,31 @@ a {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.container img { width: 100%; border-radius: 6px; margin-top: 10px; }
-.date { font-weight: bold; color: #006699; margin-bottom: 10px; }
+.container img {
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 10px;
+}
 
-@media screen and (max-width: 768px){
-  .container { width: 100%; left: 0; padding-left: 30px; padding-right: 30px; }
-  .timeline::after { left: 20px; }
+.date {
+  font-weight: bold;
+  color: #006699;
+  margin-bottom: 10px;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    left: 0 !important; /* force tout à gauche */
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  /* Ligne centrale déplacée à gauche */
+  .timeline::after {
+    left: 20px;
+  }
 }
 
 .news-container {
@@ -379,4 +409,147 @@ a {
 .footer-copy {
   font-size: 0.9rem;
   opacity: 0.8;
+}
+
+/* Activities containers */
+/* Titre section */
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #006699;
+}
+
+/* Grille d'activités */
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+/* Carte activité */
+.activity-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid #e6e6e6;
+}
+
+.activity-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+}
+
+/* Image */
+.activity-image {
+  position: relative;
+}
+
+.activity-image img {
+  width: 60%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Date moderne */
+.activity-date {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #006699;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Texte */
+.activity-info {
+  padding: 18px 20px;
+}
+
+.activity-info h3 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  color: #004d66;
+}
+
+.activity-info p {
+  color: #333;
+  line-height: 1.45;
+}
+
+/* -------- SECTION ÉVÉNEMENTS -------- */
+
+/* Titre différent */
+.events-title {
+  color: #b67a00; /* doré */
+  margin-top: 20px;
+}
+
+/* Même structure que les activités */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 0 20px;
+}
+
+/* Carte */
+.event-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+  border: 2px solid #b67a00;  /* contour doré pour différencier */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+/* Image + badge */
+.event-image {
+  position: relative;
+}
+
+.event-image img {
+  width: 70%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Badge date spécifique événement */
+.event-date {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #b67a00;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* Texte */
+.event-info {
+  padding: 20px;
+}
+
+.event-info h3 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  color: #8a5d00; /* doré foncé */
+}
+
+.event-info p {
+  color: #333;
+  line-height: 1.45;
 }

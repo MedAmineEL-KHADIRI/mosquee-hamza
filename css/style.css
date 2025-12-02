@@ -642,3 +642,95 @@ a {
     height: 500px;        /* adapte la hauteur sur mobile */
   }
 }
+
+
+/* NAVBAR Menus */
+.nav-shortcuts {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Style SVG */
+.nav-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: #006699;
+  transition: transform .2s ease, fill .2s ease;
+  cursor: pointer;
+}
+
+.nav-icon:hover svg {
+  transform: scale(1.15);
+  fill: #004766;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  /* Icônes centrées sur mobile */
+  .nav-shortcuts {
+    gap: 18px;
+  }
+
+}
+
+/* Desktop : rien à masquer */
+@media (min-width: 769px) {
+  .nav-shortcuts {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Menu mobile caché par défaut */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Affichage des SVG uniquement sur mobile */
+.menu-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding-bottom: 20px;
+}
+
+/* Quand le menu est ouvert */
+.mobile-menu.open {
+  display: flex;
+}
+
+/* Masquer les SVG sur desktop */
+@media (min-width: 1024px) {
+  .mobile-menu,
+  .menu-socials {
+    display: none !important;
+  }
+}
+
+
+/* à propos text */
+
+.text-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    max-width: 900px;
+    margin: 30px auto;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+    border: 1px solid #e6e6e6;
+}
+
+.text-card p {
+    text-align: justify;   /* alignement carré */
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #333;
+}

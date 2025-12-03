@@ -3,7 +3,6 @@
 ===================== */
 :root {
   --blue: #004b7c;
-  --blue-2: #0066a1;
   --gold: #FFD700;
   --bg: #f5f2e9;
 }
@@ -195,7 +194,7 @@ a {
   transition: background 0.3s, transform 0.2s;
 }
 
-.btn:hover { background: var(--blue-2); transform: translateY(-3px); }
+.btn:hover { background: var(--blue); transform: translateY(-3px); }
 
 /* Sections */
 .section {
@@ -486,9 +485,16 @@ a {
 /* -------- SECTION ÉVÉNEMENTS -------- */
 
 /* Titre différent */
+.activities-title {
+  margin-top: 20px;
+  margin-bottom: 20px
+}
+
+
 .events-title {
   color: #b67a00; /* doré */
   margin-top: 20px;
+  margin-bottom: 20px
 }
 
 /* Même structure que les activités */
@@ -658,14 +664,14 @@ a {
 .nav-icon svg {
   width: 30px;
   height: 30px;
-  fill: #006699;
+  fill: #004b7c;
   transition: transform .2s ease, fill .2s ease;
   cursor: pointer;
 }
 
 .nav-icon:hover svg {
-  transform: scale(1.15);
-  fill: #004766;
+  transform: scale(1.3);
+  fill: #C3B882;
 }
 
 /* Mobile adjustments */
@@ -738,3 +744,4 @@ a {
 section {
   scroll-margin-top: 90px; /* hauteur de la navbar */
 }
+

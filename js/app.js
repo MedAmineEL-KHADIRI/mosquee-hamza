@@ -105,6 +105,6 @@ function loadSheet(sheetUrl, targetId) {
 
 // Appel après que le DOM soit prêt
 document.addEventListener("DOMContentLoaded", function() {
-    loadSheet('https://docs.google.com/spreadsheets/d/e/2PACX-1vRPFM48CjWdGL-RKdStEYV5olhXBUNe6VtttfF2ZwV1vGf_SYPFg40nZNBKw29L-e_SZfBfA3f2L_dY/pub?gid=0&single=true&output=csv'+new Date().getTime(), 'activites-grid');
-    loadSheet('https://docs.google.com/spreadsheets/d/e/2PACX-1vRPFM48CjWdGL-RKdStEYV5olhXBUNe6VtttfF2ZwV1vGf_SYPFg40nZNBKw29L-e_SZfBfA3f2L_dY/pub?gid=78675078&single=true&output=csv'+new Date().getTime(), 'events-grid');
+    loadSheet('https://docs.google.com/spreadsheets/d/e/2PACX-1vRPFM48CjWdGL-RKdStEYV5olhXBUNe6VtttfF2ZwV1vGf_SYPFg40nZNBKw29L-e_SZfBfA3f2L_dY/pub?gid=0&single=true&output=csv', 'activites-grid');
+    loadSheet('https://docs.google.com/spreadsheets/d/e/2PACX-1vRPFM48CjWdGL-RKdStEYV5olhXBUNe6VtttfF2ZwV1vGf_SYPFg40nZNBKw29L-e_SZfBfA3f2L_dY/pub?gid=78675078&single=true&output=csv', 'events-grid');
 });

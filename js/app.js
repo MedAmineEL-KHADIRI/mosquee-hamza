@@ -108,3 +108,48 @@ document.addEventListener("DOMContentLoaded", function() {
     loadSheet('https://docs.google.com/spreadsheets/d/e/2PACX-1vRPFM48CjWdGL-RKdStEYV5olhXBUNe6VtttfF2ZwV1vGf_SYPFg40nZNBKw29L-e_SZfBfA3f2L_dY/pub?gid=0&single=true&output=csv', 'activites-grid');
     loadSheet('https://docs.google.com/spreadsheets/d/e/2PACX-1vRPFM48CjWdGL-RKdStEYV5olhXBUNe6VtttfF2ZwV1vGf_SYPFg40nZNBKw29L-e_SZfBfA3f2L_dY/pub?gid=78675078&single=true&output=csv', 'events-grid');
 });
+
+/* Sections Dons */
+
+// Calculer le mois précédent
+
+(function setFinanceMonth() {
+  const title = document.getElementById('finance-title');
+  if (!title) return;
+
+  const now = new Date();
+  now.setMonth(now.getMonth() - 1);
+
+  const monthName = now.toLocaleDateString('fr-FR', {
+    month: 'long',
+    year: 'numeric'
+  });
+
+  title.textContent = `Transparence financière – ${monthName.charAt(0).toUpperCase() + monthName.slice(1)}`;
+})();
+
+// Calcul des % pour la gauge
+
+const expenses = Array.from(document.querySelectorAll('#expenses-list strong'))
+  .map(el => parseFloat(el.dataset.value));
+const donations = Array.from(document.querySelectorAll('#donations-list strong'))
+  .map(el => parseFloat(el.dataset.value));
+
+const totalExpenses = expenses.reduce((a,b) => a+b, 0);
+const totalDonations = donations.reduce((a,b) => a+b, 0);
+
+document.getElementById('total-expenses').textContent = totalExpenses.toLocaleString() + ' €';
+document.getElementById('total-donations').textContent = totalDonations.toLocaleString() + ' €';
+document.getElementById('summary-received').textContent = `Dons reçus : ${totalDonations.toLocaleString()} €`;
+document.getElementById('summary-spent').textContent = `Dépenses : ${totalExpenses.toLocaleString()} €`;
+
+// Calcul de la barre proportionnelle
+const barReceived = document.querySelector('.finance-bar-received');
+const barSpent = document.querySelector('.finance-bar-spent');
+
+const total = totalExpenses + totalDonations;
+const pctReceived = totalDonations / total * 100;
+const pctSpent = totalExpenses / total * 100;
+
+barReceived.style.width = pctReceived + '%';
+barSpent.style.width = pctSpent + '%';

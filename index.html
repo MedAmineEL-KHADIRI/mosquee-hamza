@@ -222,14 +222,83 @@
     <div class="parallax parallax2"></div>
 
     <!-- Dons -->
-    <section id="donations" class="section fade-in">
-      <div class="donation-card">
-        <h2>Contribuez à votre mosquée</h2>
-        <p class="donation-text">
-          « Ceux qui dépensent [dans le sentier d’Allah] ressemblent à un grain qui produit sept épis, chacun contenant cent grains. Allah multiplie la récompense pour qui Il veut. » (Sourate Al-Baqara, 2:261)<br><br>
-          Votre soutien aide la Mosquée Hamza de Vienne à continuer d’accueillir, d’enseigner et de servir la communauté. Chaque don compte, petit ou grand.
+    <section class="finance-section fade-in">
+      <div class="finance-card">
+
+        <h2 id="finance-title">Transparence financière - M-1</h2>
+
+        <ul class="finance-categories" id="expenses-list">
+          <li>
+            <span>Charges de fonctionnement</span>
+            <strong data-value="1200">1 200 €</strong>
+          </li>
+          <li>
+            <span>Entretien & maintenance</span>
+            <strong data-value="800">800 €</strong>
+          </li>
+          <li>
+            <span>Activités religieuses & éducatives</span>
+            <strong data-value="1000">1 000 €</strong>
+          </li>
+        </ul>
+        <div class="finance-total">
+          <span>Total des dépenses</span>
+          <strong id="total-expenses">3 000 €</strong>
+        </div>
+
+        <ul class="finance-categories" id="donations-list">
+          <li>
+            <span>Dons reçu en espèce</span>
+            <strong data-value="4000">4 000 €</strong>
+          </li>
+          <li>
+            <span>CB, virement ou PayPal</span>
+            <strong data-value="800">800 €</strong>
+          </li>
+        </ul>
+        <div class="finance-total">
+          <span>Total des recettes</span>
+          <strong id="total-donations">2 800 €</strong>
+        </div>
+
+        <!-- Barre proportionnelle dons/dépenses -->
+        <div class="finance-bar">
+          <div class="finance-bar-received"></div>
+          <div class="finance-bar-spent"></div>
+        </div>
+
+        <div class="finance-summary">
+          <span class="received" id="summary-received">Dons reçus : 2 800 €</span>
+          <span class="spent" id="summary-spent">Dépenses : 3 000 €</span>
+        </div>
+
+        <h3 class="finance-verse">
+          <span class="arabic">
+            مَّثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سِنَابِلٍ فِي كُلِّ سُنْبُلَةٍ مِّاۤئَةُ حَبَّةٍ ۗ وَاللَّهُ يُضَاعِفُ لِمَن يَشَاءُ ۗ وَاللَّهُ وَاسِعٌ عَلِيمٌ
+            <span class="verse-ref">(سورة البقرة, 261)</span>
+          </span>
+
+          <span class="french">« L’exemple de ceux qui dépensent leurs biens dans le chemin d’Allah est semblable à une graine qui produit sept épis, à cent grains chacun. Allah multiplie [la récompense] à qui Il veut. Allah est Omniprésent et Omniscient. » (Sourate Al-Baqara, 261)</span>
+        </h3>
+
+        <p class="finance-message">
+          La mosquée fonctionne grâce à la participation des fidèles.
+          Cette section vise à informer en toute transparence sur la situation financière.
         </p>
-        <a href="https://www.paypal.com/donate?hosted_button_id=TON_ID_PAYPAL" target="_blank" class="btn donation-btn">Bismi'LAH faire un don بسم الله</a>
+
+        <a
+          href="https://www.paypal.com/donate/XXXXXXXX"
+          target="_blank"
+          rel="noopener"
+          class="donation-button"
+        >
+          Faire un don via PayPal
+        </a>
+
+        <p class="finance-dua">
+          Qu’Allah récompense chaque contribution.
+        </p>
+
       </div>
     </section>
 

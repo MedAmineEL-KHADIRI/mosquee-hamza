@@ -752,3 +752,136 @@ section {
   scroll-margin-top: 90px; /* hauteur de la navbar */
 }
 
+/*  Section Dons  */
+.finance-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.finance-card {
+  background: #ffffff;
+  max-width: 560px;
+  width: 100%;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.finance-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+
+.finance-subtitle {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 24px;
+}
+
+.finance-categories {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 18px;
+}
+
+.finance-categories li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
+
+.finance-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  padding-top: 10px;
+  margin-bottom: 24px;
+  border-top: 1px solid #eee;
+}
+
+.finance-bar {
+  display: flex;
+  height: 25px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #eee;
+  margin: 15px 0;
+}
+.finance-bar-received {
+  background-color: #28a745;
+  height: 100%;
+}
+.finance-bar-spent {
+  background-color: #dc3545;
+  height: 100%;
+}
+
+.finance-summary {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.finance-summary .received {
+  color: #2e7d32;
+}
+
+.finance-summary .spent {
+  color: #c62828;
+}
+
+.finance-message {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.finance-dua {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #333;
+}
+
+.donation-button {
+  display: inline-block;
+  margin: 20px 0 10px;
+  padding: 12px 26px;
+  background-color: #2e7d32;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.donation-button:hover {
+  background-color: #1b5e20;
+  transform: translateY(-2px);
+}
+
+.finance-card {
+  max-width: 900px;   /* avant sûrement ~700px */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.finance-verse {
+  margin: 15px 0;
+  text-align: center;
+  color: #444;
+}
+.finance-verse .arabic {
+  font-family: "Scheherazade", "Amiri", serif;
+  font-size: 1.3em;
+  display: block;
+  direction: rtl;
+}
+.finance-verse .french {
+  font-size: 0.75em;
+  display: block;
+}

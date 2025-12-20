@@ -72,58 +72,39 @@ window.addEventListener('scroll', () => {
   ACTIVITÉS & ÉVÉNEMENTS – Google Sheet
 ====================================================== */
 
-function loadSheet(sheetId, sheetName, containerId, type) {
-  const query = encodeURIComponent('SELECT A, B, C, D');
-  const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?sheet=${encodeURIComponent(sheetName)}&tq=${query}`;
+function loadSheet(sheetUrl, targetId) {
+    Papa.parse(sheetUrl, {
+        download: true,
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+            const container = document.getElementById(targetId);
+            container.innerHTML = ''; // vide la section avant d'ajouter
+            results.data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = targetId === 'activites-grid' ? 'activity-card' : 'event-card';
 
-  fetch(url)
-    .then(res => res.text())
-    .then(text => {
-      const json = JSON.parse(text.substring(47, text.length - 2));
-      const rows = json.table.rows;
-
-      const container = document.getElementById(containerId);
-      if (!container) return;
-
-      container.innerHTML = '';
-
-      rows.forEach(row => {
-        if (!row.c[0]) return;
-
-        const title = row.c[0]?.v || '';
-        const date = row.c[1]?.v || '';
-        const description = row.c[2]?.v || '';
-        const image = row.c[3]?.v || '';
-
-        container.innerHTML += `
-          <div class="${type}-card">
-            <div class="${type}-image">
-              <img src="${image || 'assets/news.png'}" alt="${title}">
-              <span class="${type}-date">${date}</span>
-            </div>
-            <div class="${type}-info">
-              <h3>${title}</h3>
-              <p>${description}</p>
-            </div>
-          </div>
-        `;
-      });
-    })
-    .catch(err => console.error('Erreur Google Sheet', err));
+                card.innerHTML = `
+                    <div class="${targetId === 'activites-grid' ? 'activity-image' : 'event-image'}">
+                        <img src="${item.Image || 'assets/news.png'}" alt="${item.Titre}">
+                        <span class="${targetId === 'activites-grid' ? 'activity-date' : 'event-date'}">${item.Date}</span>
+                    </div>
+                    <div class="${targetId === 'activites-grid' ? 'activity-info' : 'event-info'}">
+                        <h3>${item.Titre}</h3>
+                        <p>${item.Description}</p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        },
+        error: function(err) {
+            console.error("Erreur Google Sheet:", err);
+        }
+    });
 }
 
-const SHEET_ID = "2PACX-1vRPFM48CjWdGL-RKdStEYV5olhXBUNe6VtttfF2ZwV1vGf_SYPFg40nZNBKw29L-e_SZfBfA3f2L_dY";
-
-loadSheet(
-  SHEET_ID,
-  "Activites",    
-  "activities-grid",
-  "activity"
-);
-
-loadSheet(
-  SHEET_ID,
-  "Evenements", 
-  "events-grid",
-  "event"
-);
+// Appel après que le DOM soit prêt
+document.addEventListener("DOMContentLoaded", function() {
+    loadSheet('https://docs.google.com/spreadsheets/d/e/2PACX-1vRPFM48CjWdGL-RKdStEYV5olhXBUNe6VtttfF2ZwV1vGf_SYPFg40nZNBKw29L-e_SZfBfA3f2L_dY/pub?gid=0&single=true&output=csv', 'activites-grid');
+    loadSheet('https://docs.google.com/spreadsheets/d/e/2PACX-1vRPFM48CjWdGL-RKdStEYV5olhXBUNe6VtttfF2ZwV1vGf_SYPFg40nZNBKw29L-e_SZfBfA3f2L_dY/pub?gid=78675078&single=true&output=csv', 'events-grid');
+});

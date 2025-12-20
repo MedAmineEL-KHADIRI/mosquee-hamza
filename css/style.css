@@ -520,6 +520,13 @@ a {
   box-shadow: 0 12px 28px rgba(0,0,0,0.18);
 }
 
+.activity-card .activity-image img,
+.event-card .event-image img {
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+  border-radius: 5px; 
+}
+
 /* Image + badge */
 .event-image {
   position: relative;

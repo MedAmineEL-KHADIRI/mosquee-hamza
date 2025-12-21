@@ -567,6 +567,30 @@ a {
   line-height: 1.45;
 }
 
+/* Conteneur texte de l'événement / activité */
+.event-info p,
+.activity-info p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #333; /* texte principal */
+  margin: 0.5em 0;
+}
+
+/* Liens à l'intérieur des descriptions */
+.event-info p a,
+.activity-info p a {
+  color: #2e7d32;      /* vert fidèle à ton thème */
+  font-weight: 600;    /* plus visible */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.event-info p a:hover,
+.activity-info p a:hover {
+  color: #1b5e20;      /* changement au survol */
+  text-decoration: underline;
+}
+
 /* Section dons modernisée */
 #donations {
   display: flex;

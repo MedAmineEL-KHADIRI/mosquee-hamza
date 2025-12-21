@@ -187,3 +187,14 @@ function loadFinanceSheet(sheetUrl, elementId) {
 // Appel de la fonction
 const financeSheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRPFM48CjWdGL-RKdStEYV5olhXBUNe6VtttfF2ZwV1vGf_SYPFg40nZNBKw29L-e_SZfBfA3f2L_dY/pub?gid=1600071350&single=true&output=csv';
 loadFinanceSheet(financeSheetUrl, 'finance-card');
+
+const bankToggle = document.querySelector('.bank-toggle');
+const bankDetails = document.querySelector('.bank-details');
+
+if (bankToggle && bankDetails) {
+  bankToggle.addEventListener('click', () => {
+    const isOpen = bankToggle.getAttribute('aria-expanded') === 'true';
+    bankToggle.setAttribute('aria-expanded', !isOpen);
+    bankDetails.hidden = isOpen;
+  });
+}

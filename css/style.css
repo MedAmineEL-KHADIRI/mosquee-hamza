@@ -579,7 +579,7 @@ a {
 /* Liens à l'intérieur des descriptions */
 .event-info p a,
 .activity-info p a {
-  color: #2e7d32;      /* vert fidèle à ton thème */
+  color: #004b7c;
   font-weight: 600;    /* plus visible */
   text-decoration: none;
   transition: color 0.2s ease;
@@ -587,7 +587,7 @@ a {
 
 .event-info p a:hover,
 .activity-info p a:hover {
-  color: #1b5e20;      /* changement au survol */
+  color: #FFD700;      /* changement au survol */
   text-decoration: underline;
 }
 

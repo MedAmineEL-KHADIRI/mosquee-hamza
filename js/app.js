@@ -188,6 +188,7 @@ function loadFinanceSheet(sheetUrl, elementId) {
 const financeSheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRPFM48CjWdGL-RKdStEYV5olhXBUNe6VtttfF2ZwV1vGf_SYPFg40nZNBKw29L-e_SZfBfA3f2L_dY/pub?gid=1600071350&single=true&output=csv';
 loadFinanceSheet(financeSheetUrl, 'finance-card');
 
+// toggle Virement bancaire
 const bankToggle = document.querySelector('.bank-toggle');
 const bankDetails = document.querySelector('.bank-details');
 

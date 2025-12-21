@@ -875,13 +875,25 @@ section {
   text-align: center;
   color: #444;
 }
-.finance-verse .arabic {
+
+.finance-verse-ar {
+  margin: 30px auto 14px;
+  max-width: 900px;
   font-family: "Scheherazade", "Amiri", serif;
-  font-size: 1.3em;
-  display: block;
+  font-size: 1.55em;
+  line-height: 2;
+  color: #000;
   direction: rtl;
+  text-align: center;
+  font-weight: 700;     /* GRAS */
 }
-.finance-verse .french {
-  font-size: 0.75em;
-  display: block;
+
+.finance-verse-fr {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  font-size: 0.9em;
+  line-height: 1.7;
+  color: #222;
+  text-align: center;
+  font-weight: 600;     /* semi-gras */
 }

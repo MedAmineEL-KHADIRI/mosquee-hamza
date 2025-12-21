@@ -222,65 +222,53 @@
     <div class="parallax parallax2"></div>
 
     <!-- Dons -->
-    <section class="finance-section fade-in" id="finance-section">
-      <div  class="finance-card">
+    <section class="finance-section fade-in">
+      <div class="finance-card" id="finance-card">
 
-        <h2 id="finance-title">Transparence financière - M-1</h2>
+        <h2 id="finance-title">Transparence financière</h2>
+        <p class="finance-subtitle">
+          Situation arrêtée au mois précédent (M-1)
+        </p>
 
-        <ul class="finance-categories" id="expenses-list">
-          <li>
-            <span>Charges de fonctionnement</span>
-            <strong data-value="1200">1 200 €</strong>
-          </li>
-          <li>
-            <span>Entretien & maintenance</span>
-            <strong data-value="800">800 €</strong>
-          </li>
-          <li>
-            <span>Activités religieuses & éducatives</span>
-            <strong data-value="1000">1 000 €</strong>
-          </li>
+        <!-- Liste des dépenses -->
+        <ul class="finance-categories depenses">
+          <!-- Remplie dynamiquement via JS -->
         </ul>
-        <div class="finance-total">
+        <div class="finance-total depenses">
           <span>Total des dépenses</span>
-          <strong id="total-expenses">3 000 €</strong>
+          <strong>0 €</strong>
         </div>
 
-        <ul class="finance-categories" id="donations-list">
-          <li>
-            <span>Dons reçu en espèce</span>
-            <strong data-value="4000">4 000 €</strong>
-          </li>
-          <li>
-            <span>CB, virement ou PayPal</span>
-            <strong data-value="800">800 €</strong>
-          </li>
+        <!-- Liste des recettes -->
+        <ul class="finance-categories recettes">
+          <!-- Remplie dynamiquement via JS -->
         </ul>
-        <div class="finance-total">
+        <div class="finance-total recettes">
           <span>Total des recettes</span>
-          <strong id="total-donations">2 800 €</strong>
+          <strong>0 €</strong>
         </div>
 
-        <!-- Barre proportionnelle dons/dépenses -->
+        <!-- Gauge -->
         <div class="finance-bar">
           <div class="finance-bar-received"></div>
           <div class="finance-bar-spent"></div>
         </div>
 
+        <!-- Résumé -->
         <div class="finance-summary">
-          <span class="received" id="summary-received">Dons reçus : 2 800 €</span>
-          <span class="spent" id="summary-spent">Dépenses : 3 000 €</span>
+          <span class="received">Dons reçus : 0 €</span>
+          <span class="spent">Dépenses : 0 €</span>
         </div>
 
-        <h3 class="finance-verse">
-          <span class="arabic">
-            <span class="verse-ref"> بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ  </span> <br>
-            مَّثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سِنَابِلٍ فِي كُلِّ سُنْبُلَةٍ مِّاۤئَةُ حَبَّةٍ ۗ وَاللَّهُ يُضَاعِفُ لِمَن يَشَاءُ ۗ وَاللَّهُ وَاسِعٌ عَلِيمٌ
-            <span class="verse-ref">(سورة البقرة, 261)</span>
-          </span>
-
-          <span class="french">« L’exemple de ceux qui dépensent leurs biens dans le chemin d’Allah est semblable à une graine qui produit sept épis, à cent grains chacun. Allah multiplie [la récompense] à qui Il veut. Allah est Omniprésent et Omniscient. » (Sourate Al-Baqara, 261)</span>
-        </h3>
+        <!-- Verset coranique -->
+        <p class="finance-verse-ar">
+          <span>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span><br>
+مَّثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سِنَابِلٍ فِي كُلِّ سُنْبُلَةٍ مِّاۤئَةُ حَبَّةٍ ۗ وَاللَّهُ يُضَاعِفُ لِمَن يَشَاءُ ۗ وَاللَّهُ وَاسِعٌ عَلِيمٌ 
+<span>(سورة البقرة, 261)</span>
+        </p>
+        <p class="finance-verse-fr">
+          « L’exemple de ceux qui dépensent leurs biens dans le chemin d’Allah est semblable à une graine qui produit sept épis, à cent grains chacun. Allah multiplie [la récompense] à qui Il veut. Allah est Omniprésent et Omniscient. » (Sourate Al-Baqara, 261)
+        </p>
 
         <p class="finance-message">
           La mosquée fonctionne grâce à la participation des fidèles.
@@ -302,6 +290,7 @@
 
       </div>
     </section>
+
 
     <!-- Footer -->
     <footer id="footer" class="footer">

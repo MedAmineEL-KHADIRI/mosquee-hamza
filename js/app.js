@@ -130,26 +130,60 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Calcul des % pour la gauge
 
-const expenses = Array.from(document.querySelectorAll('#expenses-list strong'))
-  .map(el => parseFloat(el.dataset.value));
-const donations = Array.from(document.querySelectorAll('#donations-list strong'))
-  .map(el => parseFloat(el.dataset.value));
+function loadFinanceSheet(sheetUrl, elementId) {
+  Papa.parse(sheetUrl, {
+    download: true,
+    header: true,
+    complete: function(results) {
+      const data = results.data;
+      let depensesTotal = 0;
+      let recettesTotal = 0;
 
-const totalExpenses = expenses.reduce((a,b) => a+b, 0);
-const totalDonations = donations.reduce((a,b) => a+b, 0);
+      const container = document.getElementById(elementId);
+      if(!container) return;
 
-document.getElementById('total-expenses').textContent = totalExpenses.toLocaleString() + ' €';
-document.getElementById('total-donations').textContent = totalDonations.toLocaleString() + ' €';
-document.getElementById('summary-received').textContent = `Dons reçus : ${totalDonations.toLocaleString()} €`;
-document.getElementById('summary-spent').textContent = `Dépenses : ${totalExpenses.toLocaleString()} €`;
+      const ulDepenses = container.querySelector('.finance-categories.depenses');
+      const ulRecettes = container.querySelector('.finance-categories.recettes');
 
-// Calcul de la barre proportionnelle
-const barReceived = document.querySelector('.finance-bar-received');
-const barSpent = document.querySelector('.finance-bar-spent');
+      ulDepenses.innerHTML = '';
+      ulRecettes.innerHTML = '';
 
-const total = totalExpenses + totalDonations;
-const pctReceived = totalDonations / total * 100;
-const pctSpent = totalExpenses / total * 100;
+      data.forEach(item => {
+        if(!item.Catégorie || !item.Type || !item.Montant) return;
 
-barReceived.style.width = pctReceived + '%';
-barSpent.style.width = pctSpent + '%';
+        const li = document.createElement('li');
+        li.innerHTML = `<span>${item.Catégorie}</span> <strong>${parseFloat(item.Montant).toLocaleString()} €</strong>`;
+
+        if(item.Type.toLowerCase() === 'dépense') {
+          ulDepenses.appendChild(li);
+          depensesTotal += parseFloat(item.Montant) || 0;
+        } else if(item.Type.toLowerCase() === 'recette') {
+          ulRecettes.appendChild(li);
+          recettesTotal += parseFloat(item.Montant) || 0;
+        }
+      });
+
+      // Totaux
+      container.querySelector('.finance-total.depenses strong').textContent = depensesTotal.toLocaleString() + ' €';
+      container.querySelector('.finance-total.recettes strong').textContent = recettesTotal.toLocaleString() + ' €';
+
+      // Gauge
+      const gaugeReceived = container.querySelector('.finance-bar-received');
+      const gaugeSpent = container.querySelector('.finance-bar-spent');
+      const total = depensesTotal + recettesTotal || 1;
+      gaugeReceived.style.width = ((recettesTotal / total) * 100) + '%';
+      gaugeSpent.style.width = ((depensesTotal / total) * 100) + '%';
+
+      // Résumé
+      container.querySelector('.finance-summary .received').textContent = 'Dons reçus : ' + recettesTotal.toLocaleString() + ' €';
+      container.querySelector('.finance-summary .spent').textContent = 'Dépenses : ' + depensesTotal.toLocaleString() + ' €';
+    },
+    error: function(err) {
+      console.error('Erreur Google Sheet', err);
+    }
+  });
+}
+
+// Appel de la fonction
+const financeSheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRPFM48CjWdGL-RKdStEYV5olhXBUNe6VtttfF2ZwV1vGf_SYPFg40nZNBKw29L-e_SZfBfA3f2L_dY/pub?gid=1600071350&single=true&output=csv';
+loadFinanceSheet(financeSheetUrl, 'finance-card');

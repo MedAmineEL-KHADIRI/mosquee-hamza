@@ -168,7 +168,7 @@ a {
 .hero {
   height: 100vh;
   background: linear-gradient(rgba(0,0,50,0.4), rgba(0,0,50,0.4)),
-              url('../assets/mosque_interior.png') center/cover no-repeat;
+              url('../assets/mosque_interior.webp') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -244,8 +244,8 @@ a {
 
 /* Parallax */
 .parallax { height: 60vh; background-size: cover; background-position: center; }
-.parallax1 { background-image: url('../assets/mosque_ground.png'); }
-.parallax2 { background-image: url('../assets/mosque_ground.png'); }
+.parallax1 { background-image: url('../assets/mosque_ground.webp'); }
+.parallax2 { background-image: url('../assets/mosque_ground.webp'); }
 
 /* Timeline */
 .timeline {

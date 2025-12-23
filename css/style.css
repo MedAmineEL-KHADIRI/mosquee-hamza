@@ -288,6 +288,23 @@ a {
   left: 52%;          /* léger offset pour centrer visuellement */
 }
 
+/* Timeline lists */
+.timeline .content ul {
+  list-style-type: disc;      
+  padding-left: 20px;          
+  margin: 10px 0 20px 0;       
+  text-align: left;       
+  color: #004b7c;              
+  font-size: 0.95rem;        
+  line-height: 1.5;        
+}
+
+/* Pour les items individuellement si tu veux un petit style */
+.timeline .content ul li {
+  margin-bottom: 8px;   
+}
+
+
 /* Cards */
 .content {
   padding: 25px;

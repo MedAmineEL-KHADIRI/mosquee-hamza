@@ -994,10 +994,10 @@ section {
   text-align: center;
 }
 
-/* Partenariat */
+/* Partenaires */
 .partners-section {
   width: 100%;
-  padding: 40px 0 20px 0;
+  padding: 40px 0 20px;
   background-color: #f8f8f8;
   overflow: hidden;
   border-top: 1px solid #ddd;
@@ -1005,7 +1005,7 @@ section {
 }
 
 .partners-title {
-  fonttext-color-size: 1.3rem;
+  font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 20px;
   color: #004b7c;
@@ -1030,10 +1030,10 @@ section {
   display: block;
 }
 
-/* Animation pour boucle infinie */
+/* Animation */
 @keyframes scrollPartners {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* La moitié de la largeur de tous les logos pour une boucle parfaite */
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
 }
 
 /* Responsive */

@@ -247,11 +247,14 @@ a {
 .parallax1 { background-image: url('../assets/mosque_ground.webp'); }
 .parallax2 { background-image: url('../assets/mosque_ground.webp'); }
 
-/* Timeline */
+/* =====================
+   Timeline - Historique responsive
+===================== */
 .timeline {
   position: relative;
-  max-width: 900px;
+  max-width: 1200px;  /* plus large que 900px pour desktop */
   margin: 40px auto;
+  padding: 0 20px;    /* padding pour laisser respirer sur petits écrans */
 }
 
 /* Ligne centrale */
@@ -266,31 +269,32 @@ a {
   margin-left: -3px;
 }
 
-/* Bloc de base */
+/* Containers */
 .container {
   padding: 20px;
   position: relative;
   background-color: inherit;
-  width: 50%;
+  width: 48%;         /* prend presque la moitié pour desktop */
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
-/* Alternance automatique desktop */
+/* Alternance desktop */
 .timeline .container:nth-child(odd) {
   left: 0;
 }
 
 .timeline .container:nth-child(even) {
-  left: 50%;
+  left: 52%;          /* léger offset pour centrer visuellement */
 }
 
-/* Carte */
+/* Cards */
 .content {
-  padding: 20px;
+  padding: 25px;
   background-color: #fff;
   position: relative;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .container img {
@@ -299,26 +303,33 @@ a {
   margin-top: 10px;
 }
 
-.date {
-  font-weight: bold;
-  color: #006699;
-  margin-bottom: 10px;
-}
-
-/* Mobile */
+/* Mobile optimisé pour la timeline */
 @media screen and (max-width: 768px) {
   .container {
-    width: 100%;
-    left: 0 !important; /* force tout à gauche */
-    padding-left: 30px;
-    padding-right: 30px;
+    width: 100%;           /* pleine largeur */
+    left: 0 !important;    /* force tout à gauche */
+    padding-left: 10px;    /* padding minimal */
+    padding-right: 10px;
+    margin-bottom: 20px;   /* espacement entre les cards */
   }
 
-  /* Ligne centrale déplacée à gauche */
+  /* Ligne centrale proche du bord gauche */
   .timeline::after {
-    left: 20px;
+    left: 8px;             /* presque au bord */
+    width: 4px;            /* un peu plus fine pour mobile */
+  }
+
+  .content {
+    padding: 15px;         /* padding plus petit */
+  }
+
+  .container img {
+    width: 100%;           /* images prennent toute la largeur */
+    height: auto;
   }
 }
+
+/* Fin history */
 
 .news-container {
   display: flex;

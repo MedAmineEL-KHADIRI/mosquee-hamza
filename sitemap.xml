@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Page d'accueil -->
+  <url>
+    <loc>https://mosquee-hamza-vienne.fr/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Horaires de prière -->
+  <url>
+    <loc>https://mosquee-hamza-vienne.fr/#horaires</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Actualités / Événements -->
+  <url>
+    <loc>https://mosquee-hamza-vienne.fr/#events</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Annonces -->
+  <url>
+    <loc>https://mosquee-hamza-vienne.fr/#annonces</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Partenaires -->
+  <url>
+    <loc>https://mosquee-hamza-vienne.fr/#partenaires</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Contact / Infos -->
+  <url>
+    <loc>https://mosquee-hamza-vienne.fr/#contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

@@ -135,7 +135,7 @@ a {
 }
 
 /* Desktop overrides */
-@media(min-width: 769px) {
+@media(min-width: 1250px) {
   nav {
     display: flex;
     margin-left: auto; /* pousse le menu à droite du logo */
@@ -1058,5 +1058,120 @@ section {
   }
   .partners-track {
     gap: 20px;
+  }
+}
+
+/* Hajj & Umrah */
+
+.umrah {
+  background: #f8f9fa;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.umrah-intro {
+  max-width: 900px;
+  margin: 0 auto 30px;
+}
+
+/* Carousel */
+.umrah-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* centrage du carousel global */
+  display: flex;
+  align-items: center;
+}
+
+.umrah-track-container {
+  overflow: hidden;
+  flex: 1;
+}
+
+.umrah-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.umrah-slide {
+  flex: 0 0 33.3333%; /* 3 cartes visibles */
+  max-width: 33.3333%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* Carte */
+.umrah-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+.umrah-image img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.umrah-info {
+  padding: 15px;
+}
+
+.umrah-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Boutons */
+.umrah-nav {
+  background: #004b7c;
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.umrah-nav.prev {
+  margin-right: 10px;
+}
+
+.umrah-nav.next {
+  margin-left: 10px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .umrah-slide {
+    flex: 0 0 100%; /* 1 carte visible sur mobile */
+    max-width: 100%;
+  }
+}
+
+/* Scroll horizontal sur mobile */
+@media (max-width: 900px) {
+  .umrah-slide {
+    flex: 0 0 80%; /* un peu de marge pour voir la carte suivante */
+    max-width: 80%;
+  }
+
+  .umrah-track-container {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* inertie tactile sur iOS */
+  }
+
+  .umrah-nav {
+    display: none; /* cache les boutons sur mobile */
+  }
+
+  .umrah-track {
+    transform: none !important; /* désactive le JS translate */
   }
 }

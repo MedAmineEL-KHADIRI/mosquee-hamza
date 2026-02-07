@@ -199,3 +199,35 @@ if (bankToggle && bankDetails) {
     bankDetails.hidden = isOpen;
   });
 }
+
+// Section Hajj & Umrah
+
+const track = document.querySelector('.umrah-track');
+const slides = document.querySelectorAll('.umrah-slide');
+const prevBtn = document.querySelector('.umrah-nav.prev');
+const nextBtn = document.querySelector('.umrah-nav.next');
+
+let index = 0;
+
+function updateCarousel() {
+  const slideWidth = slides[0].offsetWidth;
+  track.style.transform = `translateX(-${index * slideWidth}px)`;
+}
+
+nextBtn.addEventListener('click', () => {
+  if(index < slides.length - 3) index++; // 3 cartes visibles
+  updateCarousel();
+});
+
+prevBtn.addEventListener('click', () => {
+  if(index > 0) index--;
+  updateCarousel();
+});
+
+window.addEventListener('resize', updateCarousel);
+
+function updateCarousel() {
+  if(window.innerWidth <= 900) return; // rien à faire sur mobile
+  const slideWidth = slides[0].offsetWidth;
+  track.style.transform = `translateX(-${index * slideWidth}px)`;
+}
